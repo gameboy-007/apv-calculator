@@ -8,7 +8,6 @@ import pandas as pd
 st.set_page_config(page_title="APV Calculator (Style)", layout="centered")
 
 st.title("💰 Adjusted Present Value (APV) Calculator")
-st.caption("APV computation app with automated lambda and freed-up funds logic.")
 
 st.divider()
 st.header("📥 Project Input Parameters")
@@ -132,5 +131,4 @@ if st.button("📈 Calculate APV"):
     st.metric("Initial investment (USD)", f"${initial_invest_usd:,.2f}")
     st.metric("Final Adjusted Present Value (APV)", f"${apv:,.2f}")
 
-    st.info("💡 Tip: All values (λ, freed-up funds, exchange rates) are calculated dynamically using case logic.")
     st.info("Made with ❤️ by Deepesh Pandey")
