@@ -154,11 +154,9 @@ if st.button("📈 Calculate and Show Exhibits"):
         "PV (Depreciation Shields)": pv_dep,
         "PV (Loan Benefit)": pv_loan_benefit,
         "PV (Interest Shields)": pv_interest_tax,
-        "Freed-Up Affiliate Funds": freed_up_usd,
+        "Freed-Up Affiliate Funds": freed_up_usd,s
         "Initial Investment (USD)": initial_invest_usd,
         "Final APV": apv
     }
     st.dataframe(pd.DataFrame(summary.items(), columns=["Component", "Value ($)"]), use_container_width=True)
     st.markdown(f"### 💰 **Final Adjusted Present Value (APV): ${apv:,.2f}**")
-
-    st.out("Made with ❤️ by Deepesh Pandey")
