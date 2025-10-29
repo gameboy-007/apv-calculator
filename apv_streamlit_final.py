@@ -45,10 +45,10 @@ with col3:
     contrib_growth = st.number_input("Annual growth in contribution margin (%)", value=2.1, step=0.1) / 100
 
 with col4:
-    lost_units_y1 = st.number_input("Year 1 lost sales units", value=9600.0, step=100.0)
-    lost_units_growth = st.number_input("Annual growth in lost sales units (%)", value=5.0, step=0.1) / 100
-    lost_margin_usd_y1 = st.number_input("Lost margin per unit ($)", value=35.0, step=0.1)
-    lost_margin_growth = st.number_input("Annual growth in lost margin per unit (%)", value=3.0, step=0.1) / 100
+    lost_units_y1 = st.number_input("Year 1 sales units", value=9600.0, step=100.0)
+    lost_units_growth = st.number_input("Annual growth in sales units (%)", value=5.0, step=0.1) / 100
+    lost_margin_usd_y1 = st.number_input("margin per unit ($)", value=35.0, step=0.1)
+    lost_margin_growth = st.number_input("Annual growth in margin per unit (%)", value=3.0, step=0.1) / 100
     concession_loan_eur = st.number_input("Concessional loan amount (€)", value=4_000_000.0, step=100_000.0)
 
 affiliate_amount = st.number_input("After-tax affiliate amount (€)", value=750_000.0, step=10_000.0)
