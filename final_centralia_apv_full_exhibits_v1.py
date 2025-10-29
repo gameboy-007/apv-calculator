@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 
 # -------------------------------------------------
-# Centralia-style APV Calculator (Full Exhibits)
+# APV Calculator (Full Exhibits)
 # -------------------------------------------------
 st.set_page_config(page_title="APV Calculator (Full Exhibits)", layout="wide")
 st.title("💰 Adjusted Present Value (APV) Calculator — Full Exhibits")
@@ -41,10 +41,10 @@ with col3:
     contrib_growth = st.number_input("Annual Contribution Growth (%)", value=3.1, step=0.1) / 100
 
 with col4:
-    lost_units_y1 = st.number_input("Year 1 Lost Export Units", value=9600.0, step=100.0)
-    lost_units_growth = st.number_input("Lost Export Growth (%)", value=5.0, step=0.1) / 100
-    lost_margin_usd_y1 = st.number_input("Year 1 Lost Margin per Unit ($)", value=35.0, step=0.1)
-    lost_margin_growth = st.number_input("Lost Margin Growth (%)", value=3.0, step=0.1) / 100
+    lost_units_y1 = st.number_input("Year 1 Export Units", value=9600.0, step=100.0)
+    lost_units_growth = st.number_input("Export Growth (%)", value=5.0, step=0.1) / 100
+    lost_margin_usd_y1 = st.number_input("Year 1 Margin per Unit ($)", value=35.0, step=0.1)
+    lost_margin_growth = st.number_input("Margin Growth (%)", value=3.0, step=0.1) / 100
 
 if st.button("📈 Calculate Full APV"):
 
@@ -150,3 +150,6 @@ if st.button("📈 Calculate Full APV"):
     st.metric("Freed-Up Affiliate Funds", f"${freed_up_usd:,.2f}")
     st.metric("Initial Investment (USD)", f"${initial_invest_usd:,.2f}")
     st.metric("💰 Final APV", f"${apv:,.2f}")
+
+    
+    st.info("Made with ❤️ by Deepesh Pandey")
