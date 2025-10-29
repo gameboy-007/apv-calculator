@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 
 st.set_page_config(page_title="APV Calculator with Exhibits", layout="wide")
-st.title("💰 Adjusted Present Value (APV) Calculator — with Exhibits 18.2–18.6")
+st.title("💰 Adjusted Present Value (APV) Calculator — with Exhibits")
 st.caption("APV tool. All key inputs exposed; exhibits generated and labeled.")
 
 st.divider()
@@ -57,7 +57,7 @@ with derived_col2:
     st.metric("Project debt ratio used (λ_parent)", f"{borrowing_capacity_usd / (C0_eur * S0):.4f}")
 
 st.divider()
-st.write("Press **Calculate** to generate Exhibits 18.2–18.6 and the APV.")
+st.write("Press **Calculate** to generate Exhibits and the APV.")
 
 def S_t(t):
     # PPP adjusted expected spot S_t = S0 * (1 + pi_d)^t / (1 + pi_f)^t
@@ -198,19 +198,19 @@ if st.button("📈 Calculate Exhibits & APV"):
 
     st.success("✅ Calculation complete")
 
-    st.subheader("📘 Exhibit 18.2 — After-Tax Operating Cash Flows")
+    st.subheader("📘 Exhibit — After-Tax Operating Cash Flows")
     st.dataframe(df182, use_container_width=True)
 
-    st.subheader("📘 Exhibit 18.3 — Depreciation Tax Shields")
+    st.subheader("📘 Exhibit — Depreciation Tax Shields")
     st.dataframe(df183, use_container_width=True)
 
-    st.subheader("📘 Exhibit 18.5 — Concessional Loan Payments & Benefit (PV at i_d)")
+    st.subheader("📘 Exhibit — Concessional Loan Payments & Benefit (PV at i_d)")
     st.dataframe(df185, use_container_width=True)
     st.markdown(f"**Dollar value of concessionary loan at S0** = {concession_loan_eur} × {S0} = ${concession_loan_eur * S0:,.2f}")
     st.markdown(f"**PV of concessional loan payments (discounted at i_d)** = ${meta['pv_concess_payments']:,.2f}")
     st.markdown(f"**Value (benefit) of concessional financing** = ${meta['loan_benefit']:,.2f}")
 
-    st.subheader("📘 Exhibit 18.6 — Interest Tax Shields")
+    st.subheader("📘 Exhibit — Interest Tax Shields")
     st.dataframe(df186, use_container_width=True)
     st.markdown(f"**λ_parent** (borrowing capacity / project USD cost) = {meta['lambda_parent']:.6f}")
     st.markdown(f"**λ_project** (used in exhibit) = {meta['lambda_project']:.6f}")
