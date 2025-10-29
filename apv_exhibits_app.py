@@ -160,3 +160,5 @@ if st.button("📈 Calculate and Show Exhibits"):
     }
     st.dataframe(pd.DataFrame(summary.items(), columns=["Component", "Value ($)"]), use_container_width=True)
     st.markdown(f"### 💰 **Final Adjusted Present Value (APV): ${apv:,.2f}**")
+
+    st.info("Made with ❤️ by Deepesh Pandey")
