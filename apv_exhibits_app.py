@@ -2,12 +2,12 @@ import streamlit as st
 import pandas as pd
 
 # -----------------------------------
-# FINAL STREAMLIT APP: CENTRALIA APV WITH EXHIBITS 18.2–18.6
+# FINAL STREAMLIT APP: APV WITH EXHIBITS 18.2–18.6
 # -----------------------------------
 
 st.set_page_config(page_title="APV Calculator with Exhibits", layout="wide")
 
-st.title("💰 Adjusted Present Value (APV) Calculator — Centralia Case")
+st.title("💰 Adjusted Present Value (APV) Calculator — Case")
 st.caption("Includes Exhibits 18.2 to 18.6 with labeled columns and formulas.")
 st.divider()
 
@@ -40,10 +40,10 @@ with col3:
     contrib_per_unit_eur_y1 = st.number_input("Contribution margin per unit (€)", value=40.0, step=0.1)
     contrib_growth = st.number_input("Annual growth in contribution margin (%)", value=2.1, step=0.1)/100
 with col4:
-    lost_units_y1 = st.number_input("Year 1 lost sales units", value=9600.0, step=100.0)
-    lost_units_growth = st.number_input("Annual growth in lost sales units (%)", value=5.0, step=0.1)/100
-    lost_margin_usd_y1 = st.number_input("Year 1 lost margin per unit ($)", value=35.0, step=0.1)
-    lost_margin_growth = st.number_input("Annual growth in lost margin per unit (%)", value=3.0, step=0.1)/100
+    lost_units_y1 = st.number_input("Year 1 sales units", value=9600.0, step=100.0)
+    lost_units_growth = st.number_input("Annual growth in sales units (%)", value=5.0, step=0.1)/100
+    lost_margin_usd_y1 = st.number_input("Year 1 margin per unit ($)", value=35.0, step=0.1)
+    lost_margin_growth = st.number_input("Annual growth in margin per unit (%)", value=3.0, step=0.1)/100
     concession_loan_eur = st.number_input("Concessional loan amount (€)", value=4_000_000.0, step=100_000.0)
 
 # -----------------------------------
@@ -160,3 +160,5 @@ if st.button("📈 Calculate and Show Exhibits"):
     }
     st.dataframe(pd.DataFrame(summary.items(), columns=["Component", "Value ($)"]), use_container_width=True)
     st.markdown(f"### 💰 **Final Adjusted Present Value (APV): ${apv:,.2f}**")
+
+    st.out("Made with ❤️ by Deepesh Pandey")
