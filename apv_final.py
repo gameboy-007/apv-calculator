@@ -46,10 +46,10 @@ with col3:
     price_growth = pi_f  # PPP assumption for inflation parity
 
 with col4:
-    lost_units_y1 = st.number_input("Year 1 lost sales units", value=9_600.0, step=100.0)
-    lost_units_growth = st.number_input("Annual growth in lost sales units (%)", value=5.0, step=0.1) / 100
-    lost_margin_usd_y1 = st.number_input("Lost margin per unit ($)", value=35.0, step=0.1)
-    lost_margin_growth = st.number_input("Annual growth in lost margin (%)", value=3.0, step=0.1) / 100
+    lost_units_y1 = st.number_input("Year 1 sales units", value=9_600.0, step=100.0)
+    lost_units_growth = st.number_input("Annual growth in sales units (%)", value=5.0, step=0.1) / 100
+    lost_margin_usd_y1 = st.number_input("margin per unit ($)", value=35.0, step=0.1)
+    lost_margin_growth = st.number_input("Annual growth in margin (%)", value=3.0, step=0.1) / 100
 
 st.divider()
 
